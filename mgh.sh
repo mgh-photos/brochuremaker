@@ -39,4 +39,4 @@ cp "$mghref.pdf" ../
 echo "${GSUTIL_KEY}" > "$HOME/clone/gsutil-key.json"
 gsutil -m -o Credentials:gs_service_key_file=$HOME/clone/gsutil-key.json cp $HOME/clone/mghwork/*.* "gs://xousian.appspot.com/$mghref"
 gsutil -o Credentials:gs_service_key_file=$HOME/clone/gsutil-key.json acl ch -u AllUsers:R "gs://xousian.appspot.com/$mghref/$mghref.pdf"
-wget "https://xousian.appspot.com/listbucket/$mghref?a=reset"
+wget "https://xousian.appspot.com/listbucket/$mghref?a=renew"
