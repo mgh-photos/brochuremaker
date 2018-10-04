@@ -9,6 +9,8 @@ for iname in os.listdir(os.getcwd()):
      for s in fname:
        if s.isdigit():
          numberstring = numberstring+s
-     fname = fname.replace(numberstring,alpha[numberstring])     
-     oname = fname + '.' + ext.lower()
-     os.rename(iname, oname)
+     
+     if numberstring != '':
+       fname = fname.replace(numberstring,alpha[numberstring])     
+       oname = fname + '.' + ext.lower()
+       os.rename(iname, oname)
