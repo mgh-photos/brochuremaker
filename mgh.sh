@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo sed -i.bak '/policy domain="coder" rights="none" pattern="PDF"/d' /etc/ImageMagick/policy.xml
+sudo sed -i.bak '/policy domain="coder" rights="none" pattern="PDF"/d' /etc/ImageMagick-6/policy.xml
 #sudo apt install rename 
 cd $HOME/clone
 mkdir $HOME/clone/mghwork
@@ -11,6 +11,7 @@ x=$(find . -name "*.pdf");
 y=${x##*/}
 mghref=${y//.pdf/""}
 echo ${mghref}
+mghref=`echo $mghref | sed 's/ *$//g'`
 mkdir brochure
 mkdir big-images
 #rename 's/\.JPG$/\.jpg/' *.JPG
@@ -44,6 +45,5 @@ gsutil -o Credentials:gs_service_key_file=$HOME/clone/gsutil-key.json acl ch -u 
 #
 sleep 25s
 wget "https://xousian.appspot.com/listbucket/$mghref?a=renew"
-cd /home/rof/src/github.com/mgh-photos/brochuremaker/
-git filter-branch -f --tree-filter 'rm -f brochure.zip' HEAD
+
 # --skip-ci
