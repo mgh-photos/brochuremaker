@@ -1,6 +1,6 @@
 #!/bin/bash
-sudo sed -i.bak '/policy domain="coder" rights="read|write" pattern="PDF"/d' /etc/ImageMagick-6/policy.xml
-sudo apt install rename 
+sudo sed -i.bak '/policy domain="coder" rights="none" pattern="PDF"/d' /etc/ImageMagick-6/policy.xml
+#sudo apt install rename 
 cd $HOME/clone
 mkdir $HOME/clone/mghwork
 mv *.zip $HOME/clone/mghwork/brochure.zip
@@ -13,7 +13,7 @@ mghref=${y//.pdf/""}
 echo ${mghref}
 mkdir brochure
 mkdir big-images
-rename 's/\.JPG$/\.jpg/' *.JPG
+#rename 's/\.JPG$/\.jpg/' *.JPG
 cp *.jpg big-images
 cp *.jpg brochure
 cp *.pdf brochure
