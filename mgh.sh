@@ -1,5 +1,5 @@
 #!/bin/bash
-#sudo sed -i.bak '/policy domain="coder" rights="none" pattern="PDF"/d' /etc/ImageMagick/policy.xml
+sudo sed -i.bak '/policy domain="coder" rights="none" pattern="PDF"/d' /etc/ImageMagick/policy.xml
 #sudo apt install rename 
 cd $HOME/clone
 mkdir $HOME/clone/mghwork
