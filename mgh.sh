@@ -44,5 +44,6 @@ gsutil -o Credentials:gs_service_key_file=$HOME/clone/gsutil-key.json acl ch -u 
 #
 sleep 25s
 wget "https://xousian.appspot.com/listbucket/$mghref?a=renew"
+cd $HOME/clone
 git filter-branch -f --tree-filter 'rm -f brochure.zip' HEAD
 # --skip-ci
